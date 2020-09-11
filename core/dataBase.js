@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+mongoose.Promise = global.Promise
+
 export default function mongoConnection() {
     mongoose.connect('mongodb://localhost:27017/node_rest_api', {useNewUrlParser: true, useUnifiedTopology: true });
 
