@@ -1,3 +1,3 @@
 # node_rest_api
 
-Creating demo / Node RESTFUL API with Express + Mangoose + MondoDB Compass
+Created demo / Node RESTFUL API with Express + Mangoose + MondoDB Compass
