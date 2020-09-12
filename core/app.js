@@ -4,12 +4,13 @@ import morgan from 'morgan'
 import bodyParser from 'body-parser';
 
 
-const productRoutes = require('../api/routes/products');
-const orderRoutes = require('../api/routes/orders');
-
+import productRoutes from '../api/routes/products';
+import orderRoutes from '../api/routes/orders';
+import userRoutes from '../api/routes/users';
 
 
 app.use(morgan('dev'));
+app.use('/uploads/', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/users', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
